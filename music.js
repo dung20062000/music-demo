@@ -175,8 +175,9 @@ const app = {
         const progressPersent = Math.floor(audio.currentTime / audio.duration * 100)
       progress.value = progressPersent;
       }
-      
+
     }
+    console.log([audio]);
 
     //sử lý khi tua
     progress.onchange = function(e) {
@@ -184,6 +185,17 @@ const app = {
       // console.log(seekTime);
       audio.currentTime = seekTime;
     };
+
+    // xử lí khi chỉnh âm lượng bài hát
+    const btnVolume = $('#volume');
+    audio.volume = 0.5;
+    // btnVolume.onchange = function(e) {
+    //   if(audio.volume = 0.5){
+    //     btnVolume.value = 0.5;
+    //   }
+    // };
+
+
     //khi ấn nút  nexBtn
     nextBtn.onclick = function() {
       if(_this.isRamdom) {
